@@ -28,7 +28,7 @@ CFLAGS	= -g -Wall -Wextra -Werror
 RM	= rm -rf
 
 C_FILES = srcs/main.c srcs/utils.c srcs/error.c srcs/init.c srcs/time_utils.c\
-			srcs/routine.c srcs/queue.c srcs/fork.c srcs/free.c
+			srcs/routine.c srcs/queue.c srcs/fork.c srcs/free.c srcs/print.c
 
 O_FILES = $(C_FILES:.c=.o)
 
@@ -51,5 +51,8 @@ fclean : clean
 
 re : fclean all
 
+
 .PHONY: all clean fclean re
 	
+
+#docker run -it --rm -v /Users/justine/Documents/dev/philosopher/philo:/philo nloomans/codam

@@ -21,8 +21,8 @@ bool	is_fork_available(t_philo *ph)
 	}
 	else
 	{
-	if (ph->fork == 0 && ph->game->philo[ph->id].fork == 0)
-		return (true);
+		if (ph->fork == 0 && ph->game->philo[ph->id].fork == 0)
+			return (true);
 	}
 	return (false);
 }
@@ -64,31 +64,26 @@ void	ph_takes_fork(t_philo *p)
 		p->state = eating;
 		go_back_queue(p->game);
 	}
-	
 }
 
 bool	ph_is_full(t_philo *p)
 {
-//	pthread_mutex_lock(&p->game->mut_full);
 	if (p->count_meal == p->game->param->n_eat)
-	{
-	//	pthread_mutex_unlock(&p->game->mut_full);
 		return (true);
-	}
-//	pthread_mutex_unlock(&p->game->mut_full);
 	return (false);
 }
 
 bool	ph_is_dead(t_philo *p)
 {
-	long long current_time;
+	long long	current_time;
 
 	current_time = get_time();
-	if (p->last_meal == 0 && (current_time - p->game->time >= p->game->param->t_to_die))
+	if (p->last_meal == 0
+		&& (current_time - p->game->time >= p->game->param->t_to_die))
 		return (true);
 	else if (p->last_meal == 0)
 		return (false);
 	else if (current_time - p->last_meal >= p->game->param->t_to_die)
 		return (true);
-	return(false);
+	return (false);
 }

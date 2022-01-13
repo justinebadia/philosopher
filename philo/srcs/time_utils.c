@@ -14,8 +14,8 @@
 
 long long	get_time(void)
 {
-	struct 	timeval tp;
-	long long	time;
+	struct timeval	tp;
+	long long		time;
 
 	gettimeofday(&tp, NULL);
 	time = (tp.tv_sec * 1000) + (tp.tv_usec / 1000);

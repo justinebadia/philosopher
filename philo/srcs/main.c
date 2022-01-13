@@ -12,21 +12,7 @@
 
 #include <philo.h>
 
-
-void print_queue(int *queue)
-{
-	int i;
-
-	i = 0;
-	while (queue[i] != '\0')
-	{
-		printf("%d \n", queue[i]);
-		i++;
-	}
-	printf("\n");
-}
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_game	*game;
 
@@ -48,11 +34,9 @@ int main(int argc, char **argv)
 			printer(game->philo, "is dead \xF0\x9F\x92\x80");
 			game->game_over = 1;
 		}
-
 	}
 	else
 		create_thread(game);
 	stop_game(game);
 	return (0);
 }
-

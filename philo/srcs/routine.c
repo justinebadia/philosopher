@@ -14,7 +14,7 @@
 
 void	*check_routine(void *p)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = (t_philo *)p;
 	while (philo->game->game_over != 1)
@@ -53,8 +53,7 @@ void	ph_can_eat(t_philo *p)
 		{
 			pthread_mutex_lock(&p->game->mut_full);
 			p->game->full++;
-			if (p->game->counter_on && p->game->full ==
-				p->game->param->n_philo)
+			if (p->game->counter_on && p->game->full == p->game->param->n_philo)
 			{
 				p->game->game_over = 1;
 				pthread_mutex_lock(&p->game->mut_print);
@@ -75,50 +74,10 @@ void	ph_can_eat(t_philo *p)
 void	ph_can_sleep(t_philo *p)
 {
 	if (p->game->game_over != 1)
-	{ 
+	{
 		printer(p, "\033[35mis sleeping \xF0\x9F\x98\xB4");
 		ft_usleep (p->game->param->t_to_sleep, p);
 		printer(p, "\033[34mis tkinking \xF0\x9F\x93\x96");
 		p->state = thinking;
-	}
-}
-
-void	dead_checker(t_philo *philo)
-{
-	if (philo->game->game_over != 1)
-	{
-		pthread_mutex_lock(&philo->game->mut_dead);
-		if (ph_is_dead(philo))
-		{
-			philo->game->game_over = 1;
-			dead_printer(philo);
-			//pthread_mutex_unlock(&philo->game->mut_dead);
-			stop_game(philo->game);
-			exit (-1);
-		}
-		pthread_mutex_unlock(&philo->game->mut_dead);
-	}
-}
-
-void	full_checker(t_philo *philo)
-{
-	pthread_mutex_lock(&philo->game->mut_gameover);
-	if (philo->game->game_over != 1)
-	{
-			pthread_mutex_lock(&philo->game->mut_full);
-		if (philo->game->counter_on && philo->game->full == philo->game->param->n_philo)
-		{
-			philo->game->game_over = 1;
-			pthread_mutex_unlock(&philo->game->mut_gameover);
-			philo->game->full = 0;
-			pthread_mutex_lock(&philo->game->mut_print);
-			printf("\033[3m\033[35mEveryone is full of spagetthi!\033[0m\n");
-			pthread_mutex_unlock(&philo->game->mut_full);
-			//pthread_mutex_unlock(&philo->game->mut_print);
-			stop_game(philo->game);
-			exit (-1);
-		}
-		pthread_mutex_unlock(&philo->game->mut_full);
-		pthread_mutex_unlock(&philo->game->mut_gameover);
 	}
 }
