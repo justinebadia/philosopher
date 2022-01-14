@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 15:00:16 by jbadia            #+#    #+#             */
-/*   Updated: 2022/01/12 11:50:00 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/01/14 10:29:05 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	*create_thread(t_game *game)
 	while (i < game->param->n_philo)
 	{
 		if (pthread_create(&t_ph[i], NULL, check_routine, &game->philo[i]) != 0)
-			printf("error thread\n");
+			printf("Thread error\n");
 		i++;
 	}
 	while (i > 0)

@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 16:07:16 by jbadia            #+#    #+#             */
-/*   Updated: 2022/01/10 14:36:18 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/01/14 10:34:20 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	dead_checker(t_philo *philo)
 		{
 			philo->game->game_over = 1;
 			dead_printer(philo);
-			//pthread_mutex_unlock(&philo->game->mut_dead);
 			stop_game(philo->game);
 			exit (-1);
 		}
@@ -74,7 +73,6 @@ void	full_checker(t_philo *philo)
 			pthread_mutex_lock(&philo->game->mut_print);
 			printf("\033[3m\033[35mEveryone is full of spagetthi!\033[0m\n");
 			pthread_mutex_unlock(&philo->game->mut_full);
-			//pthread_mutex_unlock(&philo->game->mut_print);
 			stop_game(philo->game);
 			exit (-1);
 		}

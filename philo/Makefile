@@ -6,7 +6,7 @@
 #    By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 16:42:26 by jbadia            #+#    #+#              #
-#    Updated: 2022/01/06 14:59:36 by jbadia           ###   ########.fr        #
+#    Updated: 2022/01/14 10:04:40 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ CWHITEBG  = \033[47m
 CGREEN2  = \033[92m
 
 NAME = philo
-OBJ_DIR	= obj 
 SRCS_DIR	= srcs
 CC	= gcc 
 CFLAGS	= -g -Wall -Wextra -Werror
@@ -33,15 +32,13 @@ C_FILES = srcs/main.c srcs/utils.c srcs/error.c srcs/init.c srcs/time_utils.c\
 O_FILES = $(C_FILES:.c=.o)
 
 .c.o :
-	@${CC} ${CFLAGS} -c -I. $< -o $@
+	@${CC} ${CFLAGS} -I. -c $< -o $@
 
 all	:		$(NAME)
+	@echo "\n\n\033[92m\033[1m\xF0\x9F\x8D\x9D Philo compiled \xF0\x9F\x8D\x9D\033[0m\n\n"
 
-$(NAME) : $(OBJ_DIR) $(O_FILES)
+$(NAME) : $(O_FILES)
 	$(CC) $(CFLAGS) $(O_FILES) -lpthread -o $@
-
-$(OBJ_DIR) :
-	@mkdir -p $(OBJ_DIR)
 
 clean : 
 	@$(RM) $(O_FILES)
@@ -53,6 +50,3 @@ re : fclean all
 
 
 .PHONY: all clean fclean re
-	
-
-#docker run -it --rm -v /Users/justine/Documents/dev/philosopher/philo:/philo nloomans/codam

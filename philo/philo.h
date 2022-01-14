@@ -22,15 +22,15 @@
 
 # define ERR_N_PHILO "At least, one philosopher is needed to play\n"
 # define ERR_T_DIE "Time to die must be set at least at one integer\
-	greater than 0\n"
+greater than 0\n"
 # define ERR_T_EAT "Time to eat must be set at least at one integer\
-	greater than 0\n"
+greater than 0\n"
 # define ERR_T_SLEEP "Time to sleep must be set at least at one integer\
-	greater than 0\n"
+greater than 0\n"
 # define ERR_N_MEAL "Number of meal must be set at least at one integer\
-	greater than 0\n"
+greater than 0\n"
 # define ERR_ARGC "Please, respect the following rules : ./philo [nb_de_philo]\
-	[time_to_die] [time_to_eat] [time_to_sleep] [nb_time_must_eat]\n"
+[time_to_die] [time_to_eat] [time_to_sleep] [nb_time_must_eat]\n"
 
 typedef enum e_state
 {
