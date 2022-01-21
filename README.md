@@ -51,4 +51,12 @@ The timezone structure should be set to NULL.
 
 To get the timestamp in milliseconds : `long time = (tp.tv_sec * 1000) + (tp.tv_usec / 1000);`
 
-
+Carefull, a philosopher could die while he is sleeping ! So, you may need to create your own usleep function, where you can check if he's still alive. It means for example:
+```
+while (time_now - start_time_of_action < time_to_eat)
+{
+  dead_checker;
+  usleep(250);
+}
+```
+So, as long as the present time minus the time that has elapsed since the action began is inferior of the time needed to eat, the philosophers would wake up every 250 microseconds and check if he's still alive. 
