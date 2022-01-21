@@ -39,7 +39,7 @@ Imagine two cars want to pass down the same narrow stretch of road. To prevent a
 - An other structure t_philo which contains all the specific variables for each philosophers (id, meal_counter...).
 
 ## Using a waiting queue
-Since philosophers can't talk to each other, they won't know if one of them is about to starving to death. So, to avoid a quicker thread to eat more often, we can use a queue. It means that we prioritize odd numbers, so 1 and 3 would eat, go back to the queue, 5 and 2 would eat, then go bach to the queue, then 4 and 1 would eat ...
+Since philosophers can't talk to each other, they won't know if one of them is about to starving to death. So, to avoid a quicker thread to eat more often, we can use a queue. It means that we prioritize odd numbers, so 1 and 3 would eat, go back to the queue, 5 and 2 would eat, then go back to the queue, then 4 and 1 would eat ...
 
 ## Handle the time
 `int gettimeofday(struct timeval *tp, struct timezone *tz);`
