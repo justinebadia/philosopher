@@ -77,7 +77,7 @@ void	ph_can_sleep(t_philo *p)
 	{
 		printer(p, "\033[35mis sleeping \xF0\x9F\x98\xB4");
 		ft_usleep (p->game->param->t_to_sleep, p);
-		printer(p, "\033[34mis tkinking \xF0\x9F\x93\x96");
+		printer(p, "\033[34mis thinking \xF0\x9F\x93\x96");
 		p->state = thinking;
 	}
 }
