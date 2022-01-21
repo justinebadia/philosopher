@@ -1,6 +1,6 @@
 # Philosopher - Dîner des philosophes
 
-Un ou plusieurs philosophes sont assis autour d'une table ronde, au centre de laquelle se trouve un plat de spaghetti. Ils peuvent soit manger, dormir ou penser. Chaque philosophe ne peut exécuter qu'une seule action à la fois. À chaque fois qu'un philosophe termine de manger, il pose ses fourchettes et commence à dormir pour un temps défini. Lorsqu'il se reveille, il pense jusqu'à ce que des fourchettes soient disponibles pour qu'il mange. Et ainsi de suite, jusqu'à ce que l'un d'entre eux meurt de faim.
+One or more philosophers are seated around a round table, in the center of which, there is a plate of spaghetti. They can either eat, sleep or think. Each philosopher can only perform one action at a time. Each time a philosopher finishes eating, he puts down his forks and begins to sleep for a defined time. When he wakes up, he thinks until forks are available so he can eat. And so on, until one of them dies of hunger.
 
 <img width="549" alt="Capture d’écran, le 2022-01-21 à 16 08 02" src="https://user-images.githubusercontent.com/79991066/150600352-ddb5e6a4-08aa-44d0-934a-dc96812e5104.png">
 
